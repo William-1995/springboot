@@ -1,5 +1,6 @@
 package com.inaction.controller;
 
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,7 +33,7 @@ public class UserController {
 
     // region - public methods
     @GetMapping("/{id}")
-    public User get(@PathVariable("id") Long id) {
+    public User get(@PathVariable("id") @NonNull Long id) {
         return userService.getUserById(users, id).get();
     }
 
@@ -44,7 +45,7 @@ public class UserController {
 
     @DeleteMapping("/delete")
     public User delete(@RequestBody User user) {
-        users.removeIf(it -> it.getId().equals(user.getId()));
+        users.removeIf(it -> it.id().equals(user.id()));
         return user;
     }
 

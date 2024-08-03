@@ -21,7 +21,7 @@ public class UserService {
             return Optional.empty();
         }
 
-        return users.stream().filter(user -> user.getId().equals(userId)).findFirst();
+        return users.stream().filter(user -> user.id().equals(userId)).findFirst();
     }
 
     /**
@@ -37,13 +37,12 @@ public class UserService {
         }
 
         for (User it : users) {
-            if (it.getId().equals(user.getId())) {
-                it.setName(user.getName());
-                updatedUser = it;
+            if (it.id().equals(user.id())) {
+                updatedUser = new User(user.id(), user.name());
             }
         }
-
+        users.remove(user);
+        users.add(updatedUser);
         return updatedUser;
     }
-
 }

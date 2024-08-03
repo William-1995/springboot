@@ -1,14 +1,10 @@
 package com.inaction.model;
 
-import org.springframework.lang.NonNull;
+import jakarta.annotation.Nonnull;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
-public class User {
-    @NonNull
-    private Long id;
-    private String name;
+public record User
+(
+    @Nonnull Long id,
+    String name
+) {
 }
