@@ -12,7 +12,6 @@ import com.interview.inaction.demo.model.User;
 @RequestMapping("users")
 public class DemoController {
 
-    
     @GetMapping("/{id}")
     public int get(@PathVariable("id") int id) {
         return id;

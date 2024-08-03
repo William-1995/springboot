@@ -14,7 +14,7 @@ class DemoApplicationTests {
 
 	@Test
 	void contextLoads() {
-		assertEquals(TEST, "a");
+		assertEquals("a", TEST);
 	}
 
 }
