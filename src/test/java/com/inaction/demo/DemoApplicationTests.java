@@ -1,4 +1,4 @@
-package com.interview.inaction.demo;
+package com.inaction.demo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

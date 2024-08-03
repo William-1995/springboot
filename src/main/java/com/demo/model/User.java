@@ -1,4 +1,4 @@
-package com.interview.inaction.demo.model;
+package com.inaction.demo.model;
 
 import lombok.Getter;
 import lombok.Setter;
