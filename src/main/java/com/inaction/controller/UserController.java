@@ -34,7 +34,11 @@ public class UserController {
     // region - public methods
     @GetMapping("/{id}")
     public User get(@PathVariable("id") @NonNull Long id) {
-        return userService.getUserById(users, id).get();
+        Optional<User> user = userService.getUserById(users, id);
+        if (user.isPresent()) {
+            return user.get();
+        }
+        return null;
     }
 
     @PostMapping("/add")
