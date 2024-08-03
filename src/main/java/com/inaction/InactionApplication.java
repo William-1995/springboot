@@ -1,11 +1,11 @@
-package com.inaction.demo;
+package com.inaction;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class InactionApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(InactionApplication.class, args);
 	}
 }

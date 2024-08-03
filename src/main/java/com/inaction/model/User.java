@@ -1,4 +1,6 @@
-package com.inaction.demo.model;
+package com.inaction.model;
+
+import org.springframework.lang.NonNull;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,6 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class User {
-    private int id;
+    @NonNull
+    private Long id;
     private String name;
 }
