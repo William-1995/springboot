@@ -5,7 +5,7 @@ import com.inaction.model.User;
 import java.util.*;
 
 /**
- * User service to 
+ * User service to operate users.
  */
 @Service("userService")
 public class UserService {
