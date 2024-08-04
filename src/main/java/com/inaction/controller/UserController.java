@@ -1,5 +1,7 @@
 package com.inaction.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.inaction.model.User;
 import com.inaction.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import java.util.*;
 
 /**
@@ -18,10 +21,12 @@ import java.util.*;
  */
 @RestController
 @RequestMapping("users")
+@Slf4j
 public class UserController {
 
     // region - constant fileds.
     private static final List<User> users = new ArrayList<>();
+    private static Logger logger = LoggerFactory.getLogger(UserController.class);
 
     // region - service
     private final UserService userService;
@@ -34,6 +39,7 @@ public class UserController {
     // region - public methods
     @GetMapping("/{id}")
     public User get(@PathVariable("id") @NonNull Long id) {
+        logger.info("Recevie get user reuest, the user ID is [{}]", id);
         Optional<User> user = userService.getUserById(users, id);
         if (user.isPresent()) {
             return user.get();
