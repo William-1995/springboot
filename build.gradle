@@ -8,7 +8,7 @@ plugins {
 }
 
 group = 'com.inaction'
-version = '0.0.1-SNAPSHOT'
+version = 'inaction'
 
 jacoco {
     toolVersion = "0.8.11"
@@ -44,8 +44,14 @@ repositories {
 	mavenCentral()
 }
 
+jar {
+	// Remove the plain suffix during build a jar.
+	archiveClassifier.set("")
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
@@ -61,14 +67,11 @@ dependencies {
 	testImplementation 'org.mockito:mockito-core:5.12.0'
 }
 
-tasks.named('test') {
+test {
 	useJUnitPlatform()
 	testLogging {
         events "passed", "skipped", "failed", "standardOut", "standardError"
     }
-}
-
-test {
     finalizedBy jacocoTestReport // report is always generated after tests run
 }
 

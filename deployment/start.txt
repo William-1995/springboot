@@ -1,0 +1,2 @@
+1. docker-compose dow
+2. docker-compose up -d
