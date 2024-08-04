@@ -1,2 +1,8 @@
-1. docker-compose dow
-2. docker-compose up -d
+1.Start sonar
+    1. docker-compose dow
+    2. docker-compose up -d
+
+2. Build and start in docker
+    1. ./gradlew bootjar
+    2. docker build -t springboot .
+    3. docker run -p 8080:8080 springboot

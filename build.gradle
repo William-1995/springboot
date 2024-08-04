@@ -45,6 +45,10 @@ repositories {
 }
 
 jar {
+	manifest {
+		// Specify the starter path.
+        attributes 'Main-Class': 'com.inaction.InactionApplication'
+    }
 	// Remove the plain suffix during build a jar.
 	archiveClassifier.set("")
 }
