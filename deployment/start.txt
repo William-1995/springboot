@@ -6,3 +6,8 @@
     1. ./gradlew bootjar
     2. docker build -t springboot .
     3. docker run -p 8080:8080 springboot （docker run --cpus=".5" -p 8080:8080 springboot）
+
+3. Start nacos
+    1. docker build -t nacos .
+    2. docker run -d -p 8848:8848 nacos
+    3. Link: http://127.0.0.1:8848/nacos/
