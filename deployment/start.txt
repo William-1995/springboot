@@ -5,4 +5,4 @@
 2. Build and start in docker
     1. ./gradlew bootjar
     2. docker build -t springboot .
-    3. docker run -p 8080:8080 springboot
+    3. docker run -p 8080:8080 springboot （docker run --cpus=".5" -p 8080:8080 springboot）

@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.inaction.model.User;
 import com.inaction.service.UserService;
-import lombok.extern.slf4j.Slf4j;
 import java.util.*;
 
 /**
@@ -21,7 +20,6 @@ import java.util.*;
  */
 @RestController
 @RequestMapping("users")
-@Slf4j
 public class UserController {
 
     // region - constant fileds.
