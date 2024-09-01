@@ -16,15 +16,15 @@ import com.inaction.service.UserService;
 import java.util.*;
 
 /**
- * A resuful controller to operate users.
+ * A restful controller to operate users.
  */
 @RestController
 @RequestMapping("users")
 public class UserController {
 
-    // region - constant fileds.
+    // region - constant filed.
     private static final List<User> users = new ArrayList<>();
-    private static Logger logger = LoggerFactory.getLogger(UserController.class);
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     // region - service
     private final UserService userService;
@@ -37,12 +37,9 @@ public class UserController {
     // region - public methods
     @GetMapping("/{id}")
     public User get(@PathVariable("id") @NonNull Long id) {
-        logger.info("Recevie get user reuest, the user ID is [{}]", id);
+        logger.info("Receive get user request, the user ID is [{}]", id);
         Optional<User> user = userService.getUserById(users, id);
-        if (user.isPresent()) {
-            return user.get();
-        }
-        return null;
+        return user.orElse(null);
     }
 
     @PostMapping("/add")

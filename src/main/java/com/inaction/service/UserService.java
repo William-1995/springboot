@@ -27,7 +27,6 @@ public class UserService {
     /**
      * Update user.
      * @param users A list of {@link User}
-     * @param userId The ID of the user.
      * @return Updated {@link User}
      */
     public User updateUser(List<User> users, User user) {
